@@ -2,9 +2,16 @@ const pokemonContainer = document.querySelector(".pokemon-container");
 const spinner = document.querySelector("#spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
+const input= document.querySelector('#searchPKM');
+
+
 
 let limit = 8;
 let offset = 1;
+
+input.addEventListener('keyup',e=> {
+    console.log(input.value)
+})
 
 previous.addEventListener("click", () => {
     if (offset != 1) {
