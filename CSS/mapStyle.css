@@ -1,0 +1,20 @@
+body {
+    background: #d63706;
+    background: local linear-gradient(90deg,
+            rgba(214, 55, 6, 1) 0%,
+            rgb(187, 48, 5, 1) 54%,
+            rgba(161, 41, 5, 1) 82%);
+    align-items: flex-start;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Oswald", sans-serif;
+}
+
+h1 {
+    color: white;
+}
+
+img {
+    width: 32%;
+    height: auto;
+}
