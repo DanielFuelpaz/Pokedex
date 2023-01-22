@@ -21,12 +21,10 @@ next.addEventListener("click", () => {
 });
 
 async function fetchPokemon(id) {
-    await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-        .then((res) => res.json())
-        .then((data) => {
-            createPokemon(data);
-            spinner.style.display = "none";
-        });
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}/`)
+    const data = await res.json()
+    createPokemon(data);
+    spinner.style.display = "none";
 }
 
 function fetchPokemons(offset, limit) {
