@@ -3,14 +3,17 @@ const spinner = document.querySelector("#spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 const input= document.querySelector('#searchPKM');
+const buttonS=document.querySelector('#searchBtn')
 
 
 
 let limit = 8;
 let offset = 1;
 
-input.addEventListener('keyup',e=> {
-    console.log(input.value)
+buttonS.addEventListener("click",e=>{
+    removeChildNodes(pokemonContainer)
+    fetchPokemon(input.value);
+   
 })
 
 previous.addEventListener("click", () => {
@@ -198,4 +201,4 @@ function traducir(texto) {
     }
     return texto;
 }
-fetchPokemons(offset, limit);
+/*fetchPokemons(offset, limit);*/
