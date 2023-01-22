@@ -27,10 +27,10 @@ async function fetchPokemon(id) {
     spinner.style.display = "none";
 }
 
-function fetchPokemons(offset, limit) {
+async function fetchPokemons(offset, limit) {
     spinner.style.display = "block";
     for (let i = offset; i <= offset + limit; i++) {
-        fetchPokemon(i);
+        await fetchPokemon(i);
     }
 }
 
