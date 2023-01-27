@@ -3,10 +3,6 @@ const spinner = document.querySelector("#spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 const input = document.querySelector('#searchPKM');
-const buttonS = document.querySelector('#searchBtn')
-
-
-//how to make a search bar in javascript?
 
 let limit = 8;
 let offset = 1;
@@ -16,10 +12,7 @@ input.addEventListener('keyup',()=> {
     fetchPokemon(input.value);
 });
 
-buttonS.addEventListener('dbclick',()=>{
-    removeChildNodes(pokemonContainer);
-    fetchPokemon(input.value);
-})
+
 
 previous.addEventListener("click", () => {
     if (offset != 1) {
