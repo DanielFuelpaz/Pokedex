@@ -6,6 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mapa</title>
+<link rel="stylesheet" href="../CSS/style.css">
 <link rel="stylesheet" href="../CSS/mapStyle.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +19,7 @@
     crossorigin="anonymous"></script>
 <script src="../JS/pokemonMap.js"></script>
 
-<body>
+<body class="bodyMap">
 <h1 class="title">Poke-map </h1>
     <div>
     <select name="Cambiar_Region" id="Change_Region" onchange="cambiarRegion(this.value)">
@@ -35,7 +36,15 @@
         <option value="paldea">Paldea</option>
     </select></div>
     <img src="../IMG/inmap.png" id="regionSel">
-
+    <footer>
+        <ul class="submenu">
+            <li class="submenus__links"><a href="pokemonSearch.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png" class="submenu__imagenesMenu"></div></a></li>
+            <li class="submenus__links"><a href="berrries.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/TMHmmXJ/Berries-icon-icons-com-67584.png" class="submenu__imagenesMenu"></div></a></li>
+            <li class="submenus__links"><a href="pokeItems.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/KWXRzjT/Bag-icon-icons-com-67588.png" class="submenu__imagenesMenu"></div></a></li>
+            <li class="submenus__links"><a href="map.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/K5V9L5y/mapa.png" class="submenu__imagenesMenu"></div></a></li>
+            <li class="submenus__links"><a href="pokeId.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/YbphPF8/Pokemon-Trainer-Boy-icon-icons-com-67516.png" class="submenu__imagenesMenu"></div></a></li>
+        </ul> 
+    </footer>
 </body>
 
 </html>
