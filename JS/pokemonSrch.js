@@ -3,17 +3,10 @@ const spinner = document.querySelector("#spinner");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
 const input = document.querySelector('#searchPKM');
-const buttonS = document.querySelector('#searchBtn')
-
-
+const search = document.querySelector('#searchBtn');
 
 let limit = 8;
 let offset = 1;
-
-buttonS.addEventListener("click", () => {
-    removeChildNodes(pokemonContainer);
-    fetchPokemon(input.value);
-});
 
 previous.addEventListener("click", () => {
     if (offset != 1) {
@@ -81,14 +74,9 @@ function createPokemon(pokemon) {
 
     const cardBack = document.createElement("div");
     cardBack.classList.add("pokemon-block-back");
-
     cardBack.appendChild(progressBars(pokemon.stats));
-
-
-
     cardContainer.appendChild(card);
     cardContainer.appendChild(cardBack);
-
     pokemonContainer.appendChild(flipCard);
 }
 
@@ -200,4 +188,4 @@ function traducir(texto) {
     }
     return texto;
 }
-fetchPokemons(offset, limit);
+/*fetchPokemons(offset, limit);*/
