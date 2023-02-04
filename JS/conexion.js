@@ -7,22 +7,24 @@ var con = mysql.createConnection({
 });
 con.connect(function (err) {
   if (err) throw err;
-  console.log("Connected!");
-  var sql = "INSERT INTO Entrenador (Nombre, Region) VALUES ?";
-  var values = [
-    ["Marilyn", "Alola"],
-    ["Majo", "Galar"],
-    ["Miguel", "Paldea"],
-  ];
-  con.query(sql, [values], function (err, result) {
-    if (err) throw err;
-    console.log("Number of records inserted: " + result.affectedRows);
+  console.log("Conectado");
+  insertarUsuario("Daniel", "Kanto");
+  con.end(function (err) {
+    if (err) {
+      return console.log("error:" + err.message);
+    }
+    console.log("Conexión cerrada");
   });
 });
-con.end(function (err) {
-  if (err) {
-    return console.log("error:" + err.message);
-  }
-  console.log("Close the database con.");
-});
-con.destroy();
+
+function insertarUsuario(name, region) {
+  var sql = "INSERT INTO Entrenador (Nombre, Region) VALUES ?";
+  var values = [[name, region]];
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) {
+        return console.log("error:" + err, message);
+      }
+      console.log("Datos insertados" + result.affectedRows);
+    };
+}
