@@ -22,8 +22,8 @@
 <body class="bodySearch">
     <h1 class="title">Pokedex</h1>
     <form class="search-bar">
-        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchPKM">
-        <input type="button" onclick="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value)" value="Search">
+        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchPKM" onchange="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value)">
+        <input type="button"value="Search">
     </form>
     <div class="pokemon-container"></div>
     <nav class="pagination" aria-label="...">
