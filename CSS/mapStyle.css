@@ -1,17 +1,17 @@
-.bodyMap{
-    background-color: #CF3F3F;
-    align-items: flex-start;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-family: "Oswald", sans-serif;
+.bodyMap {
+  background-color: #cf3f3f;
+  align-items: flex-start;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Oswald", sans-serif;
 }
 
 h1 {
-    color: white;
-    margin: 50px 30px;
+  color: white;
+  margin: 50px 30px;
 }
 
 img {
-    width: 50%;
-    height: auto;
+  width: 50%;
+  height: auto;
 }
