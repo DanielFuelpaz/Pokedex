@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pókedex</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/registrarse.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,500;0,700;1,300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="head">
+      <h1><a class="head__icon" href="index.html">Pókedex</a></h1>
+    </header>
+    <section class="register">
+      <h2 tabindex="0" class="register__title">Registrarse</h2>
+      <form class="register__container">
+        <input class="container__user__data user-information"type="text" name="name" id="name" autocomplete="on" required placeholder=" Escribe tu nombre de usuario">
+        <select class="container__user__data user-information" value="Escoja su equipo"> 
+          <option value="">Elija un equipo</option>
+          <option value="" id="">Equipo1</option>
+          <option value="" id="">Equipo 2</option>
+        </select>
+        <input class="container__user__data user-information"type="password" name="password" id="name" autocomplete="on" required placeholder="Escribe tu contraseña">
+        <input class="container__user__data user-information"type="password" name="repeat-password" id="repeat-password" required placeholder="Repite tu contraseña, por favor">
+        <input aria-label="sign up-button" class="container__user__data__sign-up "type="submit" name="sign up" value="Registrarme" id="sign up">
+      </form>
+      <a href="login.html" title="sign-in-link" tabindex="0" class="register__link-to-sign-in">Ingresar</a>
+    </section>
+    <footer>
+    </footer>
+  </body>
+</html>

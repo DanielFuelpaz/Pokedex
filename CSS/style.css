@@ -1,3 +1,22 @@
+*{
+  margin:0px;
+padding: 0px;
+}
+.principal{
+  display: flex;
+  flex-wrap: wrap;
+}
+.principal div{
+  width: 269px;
+}
+.principal input{
+  background-color: #0c213f;
+  border: none;
+  border-radius: 5px;
+  border-bottom:2px yellow solid;
+  color: white;
+  width: 40%;
+}
 .body, .bodySearch , .bodyItems, .bodyID, .bodyBerries{  
   background-color: #CF3F3F;
   display:grid;
@@ -6,34 +25,40 @@
   font-family: "Oswald", sans-serif;     
 } 
 .body{
-  grid-template-rows: 10vh 78vh 12vh;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 22vh 66vh 12vh;
+  grid-template-columns: 10vw 80vw 10vw;
 }
 .bodySearch{
-  grid-template-rows: 10vh 12vh auto 8vh 1vh 10vh;
+  grid-template-rows: 17vh 12vh auto 8vh 1vh 10vh;
   height: 100vh;
-  grid-template-columns: 10vw auto 10vw;
+  grid-template-columns: 10vw 80vw 10vw;
+  /* justify-content: center; */
 }
 .bodyItems{
   grid-template-rows: 10vh 78vh 12vh;
+  grid-template-columns: 10vw 80vw 10vw;
 }
 .bodyID{
   grid-template-rows: 15vh 73vh 12vh;
 }
 .bodyBerries{
-  grid-template-columns: 10vw auto 10vw ;
+  grid-template-columns: 10vw 80vw 10vw;
   grid-template-rows: 10vh 12vh auto 8vh;
 }
 header{
   grid-row:1;
-  grid-column: 1/3;
+  grid-column: 2/3;
+  /* justify-items: center; */
+  /* justify-self: center; */
   margin: 10px;
   padding: 5px 0;
   color:white;
   font-weight: 800;
-  margin-bottom: 186px;
+  /* margin-bottom: 186px; */
+  /* width: 100%; */
+  /* justify-content: center; */
 }
-header span{
+header span, span{
   color:#FEF330;
   font-size: 17px;
   font-weight: 600;
@@ -44,16 +69,16 @@ header h1 {
 }
 section{
   grid-row:2;
-  grid-column: 1/3;
+  grid-column: 2/3;
   /* display: flex; */
   justify-content: center;
   align-items: center;
   /* padding: 10px; */
  }
  section div{
-     width: 100%;
+     /* width: 100%; */
      height: 100%;
-     height: 100%;
+     height: 85%;
  }
 
 .pokemon-container , .berrie-container{
@@ -323,7 +348,7 @@ section{
 footer{
   display:flex;
   grid-row:3;
-  grid-column: 1/3;
+  grid-column: 1/4;
   background-color: white;
   padding: 5px;
 }
@@ -356,9 +381,19 @@ footer{
 }
 img{
   object-fit: contain;
-  width: inherit;
-  height: inherit;
+  width: 100%;
+  height: 100%;
 }
 header .span{
   font-size: 2em;
+}
+header h1 a{
+  text-decoration:none;
+  color: white;
+}
+header h1:hover, header h1 a:hover{
+  opacity: 85%;
+  cursor: pointer;
+  color: white;
+
 }
