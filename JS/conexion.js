@@ -58,6 +58,7 @@ function añadirItems(cantidad, name) {
           return console.log("error:" + err, message);
         };
       });
+      //return console.log("error:" + err, message);
       console.log("Datos insertados" + result.affectedRows);
     };
   }
