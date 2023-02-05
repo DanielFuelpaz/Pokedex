@@ -31,10 +31,8 @@ div > div > p:first-child,.data__container >p:nth-child(1),.data__container>p:nt
 }
 
 .data__container >p:nth-child(1),.data__container>p:nth-child(2),.data__container>p:nth-child(3), .data__container>p:nth-child(4){
-    /* border-bottom: 1px yellow solid; */
     height: 13px;
-    /* background-color: rgba(157,175,202); */
-}
+    }
 .data__container:nth-child(1), .data__container:nth-child(2), .data__container:nth-child(3), .data__container:nth-child(4){
     height: 100%;
     width: 100%;
@@ -55,7 +53,6 @@ div > div > p:first-child,.data__container >p:nth-child(1),.data__container>p:nt
     grid-column: 2/3;
     display: flex;
     flex-wrap: wrap;
-    /* width: 20px; */
     align-content: center;
     gap: 1px;
 }
@@ -65,8 +62,6 @@ div > div > p:first-child,.data__container >p:nth-child(1),.data__container>p:nt
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    /* gap:10px; */
-    /* height: 20px; */
 }
 .data__container:nth-child(4){
     grid-row: 5/7;
@@ -80,11 +75,9 @@ div > div > p:first-child,.data__container >p:nth-child(1),.data__container>p:nt
     grid-row: 4/7;
     grid-column: 2/3;
     display: flex;
-    /* flex-wrap: wrap; */
     flex-direction: column;
     align-content: center;
     gap:1px;
-    /* height: 96px; */
     padding: 10px;
     box-shadow: black 0px 0px 3px 0px;
 }
@@ -106,7 +99,6 @@ div{
 
 .imgPF{
     height: 60%;
-    /* margin: 5px 0px; */
 }
 .imgPF > img{
     object-fit: contain;
@@ -124,9 +116,7 @@ p, div>p{
     font-size: 0.3em;
 }
 .data__PokemonFavorito > p{
-    /* border-bottom: 1px yellow solid; */
     margin: 0px;
-    /* padding: 3px; */
 }
 div>div:hover,.data__container:nth-child(1):hover, .data__container:nth-child(2):hover, .data__container:nth-child(3):hover, .data__container:nth-child(4):hover{
     background-color: brown;
