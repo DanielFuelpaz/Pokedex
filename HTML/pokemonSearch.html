@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex</title>
     <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/pokemon.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <!-- CSS only -->
@@ -20,35 +21,54 @@
 </head>
 
 <body class="bodySearch">
-    <h1 class="title">Pokedex</h1>
+        <h1 class="title">Pokedex</h1>
     <form class="search-bar">
-        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchPKM">
-        <input type="button" onclick="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value)"
-            value="Search">
+        <input type="text" class="search-bar__input" placeholder="Ingrese número/nombre del pokemon" id="searchPKM" onchange="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value)">
+        <input type="button" class="search-bar__button" value="Search">
     </form>
-    <div class="pokemon-container"></div>
-    <nav class="pagination" aria-label="...">
-        <ul class="pagination">
-            <li class="page-item" id="previous">
-                <a class="page-link" href="#" tabindex="-1">Anterior</a>
-            </li>
-            <li class="page-item" id="next">
-                <a class="page-link" href="#">Siguiente</a>
-            </li>
-        </ul>
-    </nav>
-    <div id="spinner" class="spinner-border text-light" role="status">
-        <span class="visually-hidden">Loading...</span>
-    </div>
+        <div class="pokemon-container"></div>
+        <nav class="pagination" aria-label="...">
+            <ul class="pagination">
+                <li class="page-item" id="previous">
+                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                </li>
+                <li class="page-item" id="next">
+                    <a class="page-link" href="#">Siguiente</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="spinner" class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     <script src="../JS/pokemonSrch.js"></script>
+    
     <footer>
         <ul class="submenu">
-            <li class="submenus__links"><a href="pokemonSearch.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png" class="submenu__imagenesMenu"></div></a></li>
-            <li class="submenus__links"><a href="berrries.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/TMHmmXJ/Berries-icon-icons-com-67584.png" class="submenu__imagenesMenu"></div></a></li>
-            <li class="submenus__links"><a href="pokeItems.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/KWXRzjT/Bag-icon-icons-com-67588.png" class="submenu__imagenesMenu"></div></a></li>
-            <li class="submenus__links"><a href="map.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/K5V9L5y/mapa.png" class="submenu__imagenesMenu"></div></a></li>
-            <li class="submenus__links"><a href="pokeId.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/YbphPF8/Pokemon-Trainer-Boy-icon-icons-com-67516.png" class="submenu__imagenesMenu"></div></a></li>
-        </ul> 
+            <li class="submenus__links"><a href="pokemonSearch.html">
+                    <div class="submenus__contenedorImg"><img
+                            src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png"
+                            class="submenu__imagenesMenu"></div>
+                </a></li>
+            <li class="submenus__links"><a href="pokeBerries.html">
+                    <div class="submenus__contenedorImg"><img
+                            src="https://i.ibb.co/TMHmmXJ/Berries-icon-icons-com-67584.png"
+                            class="submenu__imagenesMenu"></div>
+                </a></li>
+            <li class="submenus__links"><a href="pokeItems.html">
+                    <div class="submenus__contenedorImg"><img
+                            src="https://i.ibb.co/KWXRzjT/Bag-icon-icons-com-67588.png" class="submenu__imagenesMenu">
+                    </div>
+                </a></li>
+            <li class="submenus__links"><a href="map.html">
+                    <div class="submenus__contenedorImg"><img src="https://i.ibb.co/K5V9L5y/mapa.png"
+                            class="submenu__imagenesMenu"></div>
+                </a></li>
+            <li class="submenus__links"><a href="pokeId.html">
+                    <div class="submenus__contenedorImg"><img
+                            src="https://i.ibb.co/YbphPF8/Pokemon-Trainer-Boy-icon-icons-com-67516.png"
+                            class="submenu__imagenesMenu"></div>
+                </a></li>
+        </ul>
     </footer>
 </body>
 

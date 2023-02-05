@@ -1,0 +1,44 @@
+h1{
+    grid-row:1;
+    justify-self: center;
+    align-self: center;
+    color:white;
+        grid-column: 2/3;
+}
+.search-bar{
+    justify-content: center;
+    grid-row:2;
+    justify-self: center;
+    align-self: center;
+    grid-column: 2/3;
+    display: flex;
+    flex-shrink: 2;
+    flex-basis: 3px;
+    padding: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.search-bar__input{
+    justify-content: center;
+    width: 283px;
+}
+.search-bar__input::placeholder{
+    justify-content: center;    
+}
+.pokemon-container{
+    grid-row:3;
+    grid-column: 2/3;
+}
+.pagination{
+    grid-row:4;
+    justify-content: center;
+    grid-column: 2/3;
+}
+.spinner-border text-light{
+    grid-row:5;
+        grid-column: 2/3;
+}
+footer{
+    grid-column: 1/4;
+    grid-row:6;
+}
