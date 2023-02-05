@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  .list-container, .register__container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .register__title, a, input::placeholder {
+    color: #eeeeee;
+  }
+  
+  a:hover, .container__user__data__sign-up, .user-information, .register {
+    color: #fff;
+  }
+  
+  .container__user__data__sign-up, a {
+    cursor: pointer;
+  }
+    body {
+    display: grid;
+    grid-template-columns: 1fr 100fr 1fr;
+    grid-template-rows: 100px 1fr 100px;
+    min-width: 320px;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Mulish", sans-serif;
+    background: linear-gradient(#BC1C1C, #CF3F3F, #a52a2a);
+  }
+  
+  .head {
+    grid-column: 1/span 2;
+    grid-row: 1;
+    height: 100px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .head .head__icon {
+    grid-column: 1/2;
+    letter-spacing: -2px;
+    align-self: self-start;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  .register {
+    display: grid;
+    grid-column: 1/span 2;
+    grid-row: 2;
+    min-width: 300px;
+    margin: 20px auto;
+    padding: 15px 20px;
+    border: 2px solid #eeeeee;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  a {
+    text-decoration: none;
+    font-size: 1.6rem;
+  }
+  
+  .register__title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+    font-weight: 700;
+  }
+  
+  .register__container {
+    font-size: 2.2rem;
+    font-weight: 500;
+  }
+  
+  .user-information, .container__user__data__sign-up {
+    border: none;
+    outline: none;
+  }
+  
+  .user-information {
+    margin: 10px 0;
+    padding: 8px;
+    border-bottom: 2px solid #eeeeee;
+    background: transparent;
+  }
+  
+  .container__user__data__sign-up {
+    border-radius: 20px;
+    margin: 10px 0 20px;
+    padding: 8px;
+    letter-spacing: 2px;
+    background: #2929a5;
+    font-size: .9em;
+  }
+  
+  .register__link-to-sign-in {
+    text-align: center;
+    margin: 10px 0 20px;
+    font-size: 2.2rem;
+  }
+  
+  
+  .container__user__data__sign-up:hover {
+    background: linear-gradient(#53354a, #903749);
+  }
+  
+  a:hover {
+    font-weight: 700;
+  }
+  
+  .list-container__item a:hover {
+    text-decoration: underline;
+  }
+  
+  .user-information:focus {
+    border-bottom: 3px ridge yellow;
+  }
+  .user-information option{
+    font-size: 1em;
+    background-color: #a52a2a;
+  }
+  

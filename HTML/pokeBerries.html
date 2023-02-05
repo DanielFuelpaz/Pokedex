@@ -6,24 +6,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Berries</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="../CSS/berrieStyle.css" />
-
+    <link rel="stylesheet" href="../CSS/berrieStyle.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/pokemon.css">
+    <!-- <script src="../JS/pokemonBerries.js"></script> -->
 </head>
 
 <body class="bodyBerries">
-    <h1 class="title">Berries</h1>
-    <div>
-        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchBerries"
+    <header>
+    <h1 class="title"><a href="index.html">Pókedex</a></h1>
+    <span>Poke-Berries</span>
+    </header>
+    <div class="bodyBerrries__search">
+        <input type="text" class="search__input" placeholder="Ingrese número/nombre del alimento" id="searchBerries"
             onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
         <input type="button" onclick="removeChildNodes(berrieContainer) ,fetchBerry(searchBerries.value)"
             value="Search" />
         <input type="button" value="Listar"/>
     </div>
-    <img src="" id="nameBerrie">
+    <!-- <img src="" id="nameBerrie"> -->
     <div class="berrie-container"></div>
     <script src="../JS/pokemonBerries.js"></script>
 </body>
-<footer>
+<footer class="berries__footer">
     <ul class="submenu">
         <li class="submenus__links"><a href="pokemonSearch.html">
                 <div class="submenus__contenedorImg"><img
