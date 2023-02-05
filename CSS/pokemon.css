@@ -5,7 +5,7 @@ h1{
     color:white;
     grid-column: 2/3;
 }
-.search-bar{
+.search-bar, .bodyBerrries__search{
     justify-content: center;
     grid-row:2;
     justify-self: center;
@@ -19,7 +19,7 @@ h1{
     flex-wrap: wrap;
     /* margin: 44px; */
 }
-.search-bar__input{
+.search-bar__input , .search__input{
     justify-content: center;
     width: 283px;
 }

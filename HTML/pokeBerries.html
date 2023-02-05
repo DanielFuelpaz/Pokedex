@@ -14,8 +14,8 @@
 
 <body class="bodyBerries">
     <h1 class="title">Berries</h1>
-    <div>
-        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchBerries"
+    <div class="bodyBerrries__search">
+        <input type="text" class="search__input" placeholder="Ingrese número/nombre del alimento" id="searchBerries"
             onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
         <input type="button" onclick="fetchBerry(searchBerries.value)" value="Search" />
     </div>
