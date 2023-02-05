@@ -1,50 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Ficha Entrenador</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="../CSS/style.css">
-    <script src='main.js'></script>
-</head>
-
-<body class="trainerSearch">
-    <h1 class="title">
-        Ficha Entrenador
-    </h1>
-    <form class="search-bar">
-        <input type="text">
-    </form>
-    <footer>
-        <ul class="submenu">
-            <li class="submenus__links"><a href="pokemonSearch.html">
-                    <div class="submenus__contenedorImg"><img
-                            src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png"
-                            class="submenu__imagenesMenu"></div>
-                </a></li>
-            <li class="submenus__links"><a href="pokeBerries.html">
-                    <div class="submenus__contenedorImg"><img
-                            src="https://i.ibb.co/TMHmmXJ/Berries-icon-icons-com-67584.png"
-                            class="submenu__imagenesMenu"></div>
-                </a></li>
-            <li class="submenus__links"><a href="pokeItems.html">
-                    <div class="submenus__contenedorImg"><img
-                            src="https://i.ibb.co/KWXRzjT/Bag-icon-icons-com-67588.png" class="submenu__imagenesMenu">
-                    </div>
-                </a></li>
-            <li class="submenus__links"><a href="map.html">
-                    <div class="submenus__contenedorImg"><img src="https://i.ibb.co/K5V9L5y/mapa.png"
-                            class="submenu__imagenesMenu"></div>
-                </a></li>
-            <li class="submenus__links"><a href="pokeId.html">
-                    <div class="submenus__contenedorImg"><img
-                            src="https://i.ibb.co/YbphPF8/Pokemon-Trainer-Boy-icon-icons-com-67516.png"
-                            class="submenu__imagenesMenu"></div>
-                </a></li>
-        </ul>
-    </footer>
+<head></head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PokeID</title>
+<link rel="stylesheet" href="../CSS/Style.css">
+<link rel="stylesheet" href="../CSS/pokeId.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+    crossorigin="anonymous"></script>
+    
+<body class="bodyID">
+    <header>
+        <h1><a href="index.html">Pókedex</a></h1>
+        <span>PokeID</span>    
+    </header>
+    <section class="bodyID__container">
+        <div class="container__data">
+            <div class="data__container">
+                <p class="number"> Número: </p>
+                <p class="number" id=""> 1</p>
+            </div>
+            <div class="data__container">
+                <p class="user">Usuario: </p>
+                <p class="user" id=" "> badilleins</p>
+            </div>
+            <div class="data__container">
+                <p class="team">Equipo: </p>
+                <p class="team" id=""> Universitos</p>
+            </div>
+            <div class="data__container">
+                <p class="data__date">Fecha inicio: </p>
+                <p class="team"> 19-02-2002</p>
+            </div>
+            <div class="data__trainerPhoto">
+                <img src="https://th.bing.com/th/id/OIP.BDm1PxaXRw1pumsNGMZEvQEsDh?pid=ImgDet&rs=1" id="">
+            </div>
+            <div class="data__PokemonFavorito">
+                <p class="tituloPF">Pokemon favorito: </p>
+                <div class="imgPF">
+                    <img src="https://www.megaidea.net/wp-content/uploads/2021/08/Pokemon11.png" id="">
+                </div>
+                <p class="nombrePF">Jigglypuff</p>
+            </div>
+        </div>
+    </section>
+            <footer>
+                <ul class="submenu">
+                    <li class="submenus__links"><a href="pokemonSearch.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png" class="submenu__imagenesMenu"></div></a></li>
+                    <li class="submenus__links"><a href="pokeBerries.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/TMHmmXJ/Berries-icon-icons-com-67584.png" class="submenu__imagenesMenu"></div></a></li>
+                    <li class="submenus__links"><a href="pokeItems.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/KWXRzjT/Bag-icon-icons-com-67588.png" class="submenu__imagenesMenu"></div></a></li>
+                    <li class="submenus__links"><a href="map.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/K5V9L5y/mapa.png" class="submenu__imagenesMenu"></div></a></li>
+                    <li class="submenus__links"><a href="pokeId.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/YbphPF8/Pokemon-Trainer-Boy-icon-icons-com-67516.png" class="submenu__imagenesMenu"></div></a></li>
+                </ul> 
+            </footer>
 </body>
-
 </html>

@@ -4,27 +4,122 @@
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
   font-family: "Oswald", sans-serif;
+  height: 100vh;
+  margin:0px
 }
 .nameBerrie {
   width: 100%;
   height: auto;
 }
+.bodyBerrries__search{
+  grid-column:2/3;
+  grid-row: 2;
+  margin-top: 30px;  
+  padding: 0px;
+}
 h1 {
   color: white;
-  margin: 50px 30px;
+  /* margin: 50px 30px; */
+  grid-row: 1;
+  grid-column: 2/3;
+  margin: 0px;
 }
 
+.flavors-name {
+  font-weight: bold;
+}
+
+
+.berrie-container {
+  grid-row: 3;
+  grid-column: 2/3;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.berrie-block,
+.berrie-block-back {
+  border-radius: 10px;
+  /* padding: 10px; */
+  background-color: white;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+}
+
+.berrie-block p {
+  margin: 5px;
+}
+.firmness{
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.name {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.size {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+#spinner {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.pagination {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+}
+
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .card-container {
+  transform: rotateY(180deg);
+}
+
+.berrie-block,
+.berrie-block-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.berrie-block-back {
+  transform: rotateY(180deg);
+  position: absolute;
+  top: 0%;
+}
 img {
   object-fit: contain;
   width: inherit;
   height: inherit;
 }
-footer {
+.berries__footer {
   display: flex;
-  grid-row: 3;
-  grid-column: 1/3;
+  grid-column: 1/4;
+  grid-row: 4;
   background-color: white;
   padding: 5px;
+
 }
 .submenu {
   width: 100%;
@@ -37,6 +132,7 @@ footer {
   margin: 0;
 }
 .submenus__links {
+  /* padding: 0px; */
   color: black;
   flex-shrink: 1;
   flex-grow: 2;
@@ -53,3 +149,59 @@ footer {
 .submenus__contenedorImg:hover {
   transform: scale(1.2);
 }
+.stat-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  text-align: left;
+}
+
+.background-color-sour {
+  background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: -ms-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: -moz-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: -o-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background-color: #9bcc50;
+  color: #212121;
+}
+
+.background-color-sweet {
+  background: -webkit-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: -ms-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: -moz-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: -o-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background-color: #fdb9e9;
+  color: #212121;
+}
+
+.background-color-bitter {
+  background: -webkit-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: -ms-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: -moz-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: -o-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background-color: #eed535;
+  color: #212121;
+}
+
+.background-color-dry {
+  background: -webkit-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: -ms-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: -moz-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: -o-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background-color: #51c4e7;
+  color: #212121;
+}
+
+.background-color-spicy {
+  background: -webkit-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: -ms-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: -moz-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: -o-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background-color: #e23737;
+  color: aliceblue;
+}
+

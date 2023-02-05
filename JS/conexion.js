@@ -9,7 +9,7 @@ var con = mysql.createConnection({
 con.connect(function (err) {
   if (err) throw err;
   console.log("Conectado");
-  //insertarUsuario("Daniel", "Kanto");
+  //obtenerIdEntrenador("Daniel");
   añadirItems(3, "Cura total");
   console.log(obtenerIdEntrenador("Daniel"));
   //itemsEntrenador(1,4);
@@ -20,6 +20,15 @@ con.connect(function (err) {
     console.log("Conexión cerrada");
   });
 });
+
+function obtenerIdEntrenador(name) {
+  var sql = "SELECT EntrenadorID FROM Entrenador WHERE Entrenador.Nombre = ?";
+  var values = [[name]];
+  con.query(sql, [values], function (err, result) {
+    if (err) throw err;
+    console.log(result[0].EntrenadorID);
+  });
+}
 
 function insertarUsuario(name, region) {
   var sql = "INSERT INTO Entrenador (Nombre, Region) VALUES ?";
