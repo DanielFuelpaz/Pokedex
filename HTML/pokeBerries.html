@@ -19,7 +19,9 @@
     <div class="bodyBerrries__search">
         <input type="text" class="search__input" placeholder="Ingrese número/nombre del alimento" id="searchBerries"
             onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
-        <input type="button" onclick="fetchBerry(searchBerries.value)" value="Search" />
+        <input type="button" onclick="removeChildNodes(berrieContainer) ,fetchBerry(searchBerries.value)"
+            value="Search" />
+        <input type="button" value="Listar"/>
     </div>
     <!-- <img src="" id="nameBerrie"> -->
     <div class="berrie-container"></div>
