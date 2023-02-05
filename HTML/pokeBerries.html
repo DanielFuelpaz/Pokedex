@@ -7,16 +7,19 @@
     <title>Berries</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="../CSS/berrieStyle.css" />
-    <script src="../JS/pokemonBerries.js"></script>
+    <!-- <script src="../JS/pokemonBerries.js"></script> -->
 </head>
 
 <body class="bodyBerries">
     <h1 class="title">Berries</h1>
     <div>
-        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchBerries" onchange="fetchBerry(searchBerries.value.toLowerCase())" />
+        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchBerries"
+            onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
         <input type="button" onclick="fetchBerry(searchBerries.value)" value="Search" />
     </div>
     <img src="" id="nameBerrie">
+    <div class="berrie-container"></div>
+    <script src="../JS/pokemonBerries.js"></script>
 </body>
 <footer>
     <ul class="submenu">
