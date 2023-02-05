@@ -13,8 +13,6 @@ h1 {
   color: white;
   margin: 50px 30px;
 }
-
-
 .berrie-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -126,4 +124,7 @@ footer {
   display: grid;
   grid-template-columns: 1fr 2fr;
   text-align: left;
+}
+footer{
+  grid-column: 1/6;
 }
