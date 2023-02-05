@@ -21,17 +21,16 @@
 
 <body class="bodySearch">
     <h1 class="title">Pokedex</h1>
-    <form class="search-bar">
-        <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchPKM" onchange="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value.toLowerCase())">
-        <input type="button"value="Search">
-    </form>
+    <input type="text" placeholder="ingrese el número o nombre del pokemon" id="searchPKM"
+        onchange="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value.toLowerCase())">
+    <input type="button" value="Search">
     <div class="pokemon-container"></div>
     <nav class="pagination" aria-label="...">
         <ul class="pagination">
             <li class="page-item" id="previous">
                 <a class="page-link" href="#" tabindex="-1">Anterior</a>
             </li>
-            <li class="page-item" id="next">
+            <li class="page-item" id="next" >
                 <a class="page-link" href="#">Siguiente</a>
             </li>
         </ul>
@@ -40,7 +39,7 @@
         <span class="visually-hidden">Loading...</span>
     </div>
     <script src="../JS/pokemonSrch.js"></script>
-    
+
     <footer>
         <ul class="submenu">
             <li class="submenus__links"><a href="pokemonSearch.html">

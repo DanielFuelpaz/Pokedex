@@ -14,6 +14,10 @@ h1 {
   margin: 50px 30px;
 }
 
+.flavors-name {
+  font-weight: bold;
+}
+
 
 .berrie-container {
   display: grid;
@@ -37,11 +41,19 @@ h1 {
 .berrie-block p {
   margin: 5px;
 }
-
+.firmness{
+  text-transform: capitalize;
+  font-weight: bold;
+}
 .name {
   text-transform: capitalize;
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.size {
+  text-transform: capitalize;
+  font-weight: bold;
 }
 
 #spinner {
@@ -127,3 +139,54 @@ footer {
   grid-template-columns: 1fr 2fr;
   text-align: left;
 }
+
+.background-color-sour {
+  background: -webkit-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: -ms-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: -moz-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: -o-linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background: linear-gradient(180deg, #9bcc50 50%, #9bcc50 50%);
+  background-color: #9bcc50;
+  color: #212121;
+}
+
+.background-color-sweet {
+  background: -webkit-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: -ms-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: -moz-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: -o-linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background: linear-gradient(180deg, #fdb9e9 50%, #fdb9e9 50%);
+  background-color: #fdb9e9;
+  color: #212121;
+}
+
+.background-color-bitter {
+  background: -webkit-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: -ms-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: -moz-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: -o-linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background: linear-gradient(180deg, #eed535 50%, #eed535 50%);
+  background-color: #eed535;
+  color: #212121;
+}
+
+.background-color-dry {
+  background: -webkit-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: -ms-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: -moz-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: -o-linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background: linear-gradient(180deg, #51c4e7 50%, #51c4e7 50%);
+  background-color: #51c4e7;
+  color: #212121;
+}
+
+.background-color-spicy {
+  background: -webkit-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: -ms-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: -moz-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: -o-linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background: linear-gradient(180deg, #e23737 50%, #e23737 50%);
+  background-color: #e23737;
+  color: aliceblue;
+}
+

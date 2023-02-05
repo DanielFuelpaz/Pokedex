@@ -45,16 +45,11 @@ function createBerrie(berrie) {
 
   const growth_time = document.createElement("p");
   growth_time.classList.add("growth_time");
-  growth_time.textContent =
-    "Tiempo Crecimiento: " + berrie.growth_time + " horas por etapa";
+  growth_time.textContent = "Crecimiento: " + berrie.growth_time + "h x etapa";
 
   const firmness = document.createElement("p");
   firmness.classList.add("firmness");
-  firmness.textContent = berrie.firmness.name;
-
-  const flavor = document.createElement("p");
-  flavor.classList.add("flavor");
-  flavor.textContent = sabor(berrie.flavors);
+  firmness.textContent = "Dureza: " + dureza(berrie.firmness.name);
 
   card.appendChild(spriteContainer);
   card.appendChild(number);
@@ -66,11 +61,16 @@ function createBerrie(berrie) {
 
   const size = document.createElement("p");
   size.classList.add("size");
-  size.textContent = "tamaño: " + berrie.size / 10 + "cm";
+  size.textContent = "Tamaño: " + berrie.size / 10 + "cm";
+
+  const flavorsName = document.createElement("div");
+  flavorsName.classList.add("flavors-name");
+  flavorsName.textContent = "Sabores";
 
   cardBack.appendChild(size);
   cardBack.appendChild(firmness);
-  cardBack.appendChild(flavor);
+  cardBack.appendChild(flavorsName);
+  cardBack.appendChild(berrieFlavors(berrie.flavors));
   cardContainer.appendChild(card);
   cardContainer.appendChild(cardBack);
   berrieContainer.appendChild(flipCard);
@@ -85,24 +85,57 @@ function removeChildNodes(parent) {
   }
 }
 
-function sabor(flavors) {
+function berrieFlavors(flavors) {
+  const flavorsContainer = document.createElement("div");
+  flavorsContainer.classList.add("flavors-container");
+
   for (let i = 0; i < flavors.length; i++) {
     const flavor = flavors[i];
+    const flavorN = document.createElement("div");
     if (flavor.potency != 0) {
       const items = new Map([
         ["spicy", "Picante"],
-        ["dry", "Seco"],
+        ["dry", "Seca"],
         ["sweet", "Dulce"],
-        ["bitter", "Amargo"],
-        ["sour", "Picante"],
+        ["bitter", "Amarga"],
+        ["sour", "Ácida"],
       ]);
+
+      const itemBackground = new Map([
+        ["spicy", "background-color-spicy"],
+        ["dry", "background-color-dry"],
+        ["sweet", "background-color-sweet"],
+        ["bitter", "background-color-bitter"],
+        ["sour", "background-color-sour"],
+      ]);
+
       if (items.has(flavor.flavor.name)) {
-        flavor.flavor.name = items.get(flavor.flavor.name);
+        flavorN.textContent = items.get(flavor.flavor.name);
+        flavorN.classList.add(itemBackground.get(flavor.flavor.name));
+        flavorsContainer.appendChild(flavorN);
       }
-      return flavor.flavor.name;
     }
   }
+  return flavorsContainer;
 }
+
+function dureza(texto) {
+  const types = new Map([
+    ["very-soft", "Muy blanda"],
+    ["soft", "Blanda"],
+    ["hard", "Dura"],
+    ["very-hard", "Muy Dura"],
+    ["super-hard", "Superdura"],
+  ]);
+  if (types.has(texto)) {
+    texto = types.get(texto);
+  }
+  return texto;
+}
+
+function ocultar(){
+  document.getElementById('obj1').style.display = 'none';
+  }
 
 function nombre(texto) {
   const types = new Map([
@@ -169,7 +202,7 @@ function nombre(texto) {
     ["micle", "Lagro"],
     ["custap", "Chiri"],
     ["jaboca", "Jaboca"],
-    ["rowap", "Magua"]
+    ["rowap", "Magua"],
   ]);
   if (types.has(texto)) {
     texto = types.get(texto);
