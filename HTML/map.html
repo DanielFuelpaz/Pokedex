@@ -23,23 +23,16 @@
     <h1 class="title"><a href="index.html">Pókedex</a></h1>
     <span>Pokemap</span>
     </header>
-    <div>
-        <select name="Cambiar_Region" id="Change_Region" onchange="cambiarRegion(this.value)">
+    <div class="opcionesContainer"> 
+        <select name="Cambiar_Region" id="Change_Region" onchange="location = this.value">
             <option value="inMap">Seleccione una Region</option>
-            <option value="kanto">Kanto</option>
-            <option value="johto">Johto</option>
-            <option value="hoenn">Hoenn</option>
-            <option value="sinnoh">Sinnoh</option>
-            <option value="unova">Unova</option>
-            <option value="kalos">Kalos</option>
-            <option value="alola">Alola</option>
-            <option value="galar">Galar</option>
-            <option value="hisui">Hisui</option>
-            <option value="paldea">Paldea</option>
+            <option value="kanto.html"><a href="kanto.html">kanto</option></a>
+            <option value="johto.html">Johto</option>
+            <option value="hoenn.html">Hoenn</option>
         </select>
     </div>
     <section>
-        <div>
+        <div class="achicar">
             <img src="../IMG/inmap.png" id="regionSel">
         </div>
     </section>

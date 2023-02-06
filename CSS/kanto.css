@@ -1,0 +1,12 @@
+.container path{
+    fill:black;
+    stroke: red;
+    stroke-width: 20px;
+}
+.container:hover{
+    fill: yellow;
+}
+path a:hover{
+    opacity: 80%;
+    cursor: pointer;
+}

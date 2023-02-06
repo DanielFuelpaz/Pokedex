@@ -21,11 +21,15 @@
         <h1><a href="index.html">Pókedex</a></h1>
         <span>Poke Items</span>    
     </header>
-    <div class="bodyBerrries__search">
-        <input type="text" class="search__input" placeholder="Ingrese número/nombre del item a buscar" id="searchItems"
-            onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
-        <input type="button" onclick="fetchBerry(searchBerries.value)" value="Search" />
+    <section>
+    <div class="bodyItems__search search-bar">
+        <input type="text" class="search__input" placeholder="Ingrese número/nombre del item a buscar" id="searchItem"
+            onchange="removeChildNodes(itemsContainer),fetchItem(searchItem.value.toLowerCase())" />
+        <input type="button" onclick="fetchItem(searchItem.value)" value="Search" />
     </div>
+    <div class="item-container"></div>
+    <script src="../JS/pokemonItems.js"></script>
+    </section>
             <footer>
                 <ul class="submenu">
                     <li class="submenus__links"><a href="pokemonSearch.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png" class="submenu__imagenesMenu"></div></a></li>
