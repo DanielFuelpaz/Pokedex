@@ -5,7 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PokeItems</title>
-<link rel="stylesheet" href="../CSS/Style.css">
+<link rel="stylesheet" href="../CSS/pokeItems.css">
+<link rel="stylesheet" href="../CSS/style.css">
+<link rel="stylesheet" href="../CSS/pokemon.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 <!-- CSS only -->
@@ -21,12 +23,14 @@
         <h1><a href="index.html">Pókedex</a></h1>
         <span>Poke Items</span>    
     </header>
-    <div class="bodyBerrries__search">
+    <div class="search-bar">
         <input type="text" class="search__input" placeholder="Ingrese número/nombre del item a buscar" id="searchItems"
-            onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
-        <input type="button" onclick="fetchBerry(searchBerries.value)" value="Search" />
+            onchange="removeChildNodes(itemContainer),fetchItem(searchItems.value.toLowerCase())" />
+        <input type="button" onclick="removeChildNodes(itemContainer),fetchItem(searchItems.value.toLowerCase())" value="Search" />
     </div>
-            <footer>
+    <div class="item-container"></div>
+    <script src="../JS/pokemonItems.js"></script>
+            <footer class="items__footer">
                 <ul class="submenu">
                     <li class="submenus__links"><a href="pokemonSearch.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/yfKMjqt/pokemon-go-play-game-charcter-icon-icons-com-69165.png" class="submenu__imagenesMenu"></div></a></li>
                     <li class="submenus__links"><a href="pokeBerries.html"><div class="submenus__contenedorImg"><img src="https://i.ibb.co/TMHmmXJ/Berries-icon-icons-com-67584.png" class="submenu__imagenesMenu"></div></a></li>
