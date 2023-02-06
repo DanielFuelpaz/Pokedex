@@ -10,9 +10,11 @@ con.connect(function (err) {
   if (err) throw err;
   console.log("Conectado");
   //obtenerIdEntrenador("Daniel");
-  añadirItems(3, "Cura total");
-  console.log(obtenerIdEntrenador("Daniel"));
+  //añadirItems(3, "Cura total");
+  //console.log(obtenerIdEntrenador("Daniel"));
   //itemsEntrenador(1,4);
+  //insertarPokemon("Mr Mime");
+  pokemonEntrenador(1,3);
   con.end(function (err) {
     if (err) {
       return console.log("error:" + err.message);
@@ -57,7 +59,7 @@ function modificarUsuario(name) {
 
 function añadirItems(cantidad, name) {
   var sql = "INSERT INTO Misitems (Cantidad, Nombre) VALUES ?";
-  var values = [[cantidad, name]];
+  var values = [[cantidad, name.toLowerCase()]];
   con.query(sql, [values]), function (err, result) {
     if (err) {
       var sql = "UPDATE Misitems SET Cantidad=? WHERE Nombre=?";
@@ -87,7 +89,25 @@ function obtenerIdItem(name) {
   var values = [[name]];
   con.query(sql, [values], function (err, result) {
     if (err) throw err;
-    console.log(result[0].EntrenadorID);
+    console.log(result[0].MisitemsID);
+  });
+}
+
+function obtenerIdPokemon(name) {
+  var sql = "SELECT MispokemonID FROM Mispokemon WHERE Mispokemon.Nombre = ?";
+  var values = [[name]];
+  con.query(sql, [values], function (err, result) {
+    if (err) throw err;
+    console.log(result[0].MispokemonID);
+  });
+}
+
+function obtenerIdBerries(name) {
+  var sql = "SELECT MisberriesID FROM Misberries WHERE Misberries.Nombre = ?";
+  var values = [[name]];
+  con.query(sql, [values], function (err, result) {
+    if (err) throw err;
+    console.log(result[0].MisberriesID);
   });
 }
 //firmeza en vez de suavidad - berries
@@ -98,4 +118,50 @@ function itemsEntrenador(cod_I, cod_E) {
     if (err) throw err;
     console.log(result.affectedRows);
   };
+}
+//SELECT EntrenadorID, Contraseña, (SELECT EntrenadorID from Usuarios WHERE Nombre=?) as NombreEntrenador from Usuarios;
+//SELECT Nombre, Contraseña, (SELECT EntrenadorID from Usuarios WHERE Nombre="Daniel") as IDEntrenador from Usuarios
+function pokemonEntrenador(cod_P, cod_E) {
+  var sql = "INSERT INTO EntrenadorMispokemon (MispokemonID, EntrenadorID) VALUES?";
+  var values = [[cod_P, cod_E]];
+  con.query(sql, [values]), function (err, result) {
+    if (err) throw err;
+    console.log(result.affectedRows);
+  };
+}
+
+function berriesEntrenador(cod_B, cod_E) {
+  var sql = "INSERT INTO EntrenadorMisberries (MisberriesID, EntrenadorID) VALUES?";
+  var values = [[cod_B, cod_E]];
+  con.query(sql, [values]), function (err, result) {
+    if (err) throw err;
+    console.log(result.affectedRows);
+  };
+}
+//Select con ambos indices EntrenadorMisItems result.affectedRows
+function insertarPokemon(name) {
+  var aux  = name.toLowerCase();
+  aux = aux.replaceAll(" ","-");
+  var sql = "INSERT INTO Mispokemon (Nombre) VALUES ?";
+  var values = [[aux]];
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) {
+        return console.log("error:" + err, message);
+      }
+      console.log("Datos insertados" + result.affectedRows);
+    };
+}
+
+function insertarBerries(name) {
+  var aux  = name.toLowerCase();  
+  var sql = "INSERT INTO Misberries (Nombre) VALUES ?";
+  var values = [[aux]];
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) {
+        return console.log("error:" + err, message);
+      }
+      console.log("Datos insertados" + result.affectedRows);
+    };
 }
