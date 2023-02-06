@@ -35,7 +35,7 @@ section div{
 
 }
 img {
-  object-fit: fill;
+  object-fit:contain;
   width: inherit;
   height: inherit;
 }
