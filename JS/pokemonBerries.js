@@ -133,9 +133,9 @@ function dureza(texto) {
   return texto;
 }
 
-function ocultar(){
-  document.getElementById('obj1').style.display = 'none';
-  }
+function ocultar() {
+  document.getElementById("obj1").style.display = "none";
+}
 
 function nombre(texto) {
   const types = new Map([

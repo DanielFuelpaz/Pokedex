@@ -13,11 +13,11 @@ h1 {
 }
 
 section div {
-  width:100%;
+  width:auto;
   height: 100%;
 }
 img {
-  object-fit:fill;
+  object-fit:contain;
   width: inherit;
   height: inherit;
 }
