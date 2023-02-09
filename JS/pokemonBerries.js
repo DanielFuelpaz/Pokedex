@@ -1,20 +1,41 @@
 const berrieContainer = document.querySelector(".berrie-container");
+const previous = document.querySelector("#previous");
+const next = document.querySelector("#next");
+const spinner = document.querySelector("#spinner");
+
+let limit = 14;
+let offset = 1;
+
+previous.addEventListener("click", () => {
+  if (offset != 1) {
+    offset -= 15;
+    removeChildNodes(berrieContainer);
+    fetchBerrys(offset, limit);
+  }
+});
+
+next.addEventListener("click", () => {
+  offset += 15;
+  removeChildNodes(berrieContainer);
+  if(offset<=64){
+    fetchBerrys(offset, limit);
+  }
+});
+
 
 async function fetchBerry(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/berry/${id}/`);
   const data = await res.json();
-  createBerrie(data);
+  createBerrie(data)
+  spinner.style.display = "none";
 }
 
-/*
-Berries
-id
-nombre
-tiempoCrecimiento
-tamaño
-suavidad
-sabor
-*/
+async function fetchBerrys(offset, limit) {
+  spinner.style.display = "block";
+  for (let i = offset; i <= offset + limit; i++) {
+    await fetchBerry(i);
+  }
+}
 
 function createBerrie(berrie) {
   const flipCard = document.createElement("div");
