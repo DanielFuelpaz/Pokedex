@@ -100,8 +100,7 @@
   .items__footer {
     display: flex;
     grid-column: 1/4;
-    grid-row: 4;
-    background-color: white;
+        background-color: white;
     padding: 5px;
   
   }
