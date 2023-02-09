@@ -97,7 +97,7 @@
     width: inherit;
     height: inherit;
   }
-  .item__footer {
+  .items__footer {
     display: flex;
     grid-column: 1/4;
     grid-row: 4;

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,500;0,700;1,300&display=swap" rel="stylesheet">
+    <script src="../node_modules/mysql/"></script>
   </head>
   <body>
     <header class="head">
@@ -16,16 +17,18 @@
     <section class="register">
       <h2 tabindex="0" class="register__title">Registrarse</h2>
       <form class="register__container">
-        <input class="container__user__data user-information"type="text" name="name" id="name" autocomplete="on" required placeholder=" Escribe tu nombre de usuario">
+        <input class="container__user__data user-information"type="text" name="name" id="user" autocomplete="on" required placeholder=" Escribe tu nombre de usuario">
         <select class="container__user__data user-information" value="Escoja su equipo"> 
-          <option value="">Elija un equipo</option>
-          <option value="" id="">Equipo1</option>
-          <option value="" id="">Equipo 2</option>
+          <option value="">Elija su Género</option>
+          <option value="" id="">Hombre</option>
+          <option value="" id="">Mujer</option>
+          <option value="" id="">No especificado</option>
         </select>
-        <input class="container__user__data user-information"type="password" name="password" id="name" autocomplete="on" required placeholder="Escribe tu contraseña">
+        <input class="container__user__data user-information"type="password" name="password" id="password" autocomplete="on" required placeholder="Escribe tu contraseña">
         <input class="container__user__data user-information"type="password" name="repeat-password" id="repeat-password" required placeholder="Repite tu contraseña, por favor">
-        <input aria-label="sign up-button" class="container__user__data__sign-up "type="submit" name="sign up" value="Registrarme" id="sign up">
+        <input aria-label="sign up-button" class="container__user__data__sign-up "type="submit" name="sign up" value="Registrarme" id="sign up" onclick="registroUsuario(user.value,password.value)">
       </form>
+      <script src="../JS/conexion.js"></script>
       <a href="login.html" title="sign-in-link" tabindex="0" class="register__link-to-sign-in">Ingresar</a>
     </section>
     <footer>

@@ -1,28 +1,40 @@
 const itemContainer = document.querySelector(".item-container");
 const previous = document.querySelector("#previous");
 const next = document.querySelector("#next");
-async function fetchItem(id) {
-  const res = await fetch(`https://pokeapi.co/api/v2/item/${id}/`);
-  const data = await res.json();
-  createItem(data);
-}
-let limit = 8;
-let offset = 1;
+const spinner = document.querySelector("#spinner");
 
+let limit = 14;
+let offset = 1;
 
 previous.addEventListener("click", () => {
   if (offset != 1) {
-    offset -= 9;
+    offset -= 15;
     removeChildNodes(itemContainer);
-    fetchItem(offset, limit);
+    fetchItems(offset, limit);
   }
 });
 
 next.addEventListener("click", () => {
-  offset += 9;
+  offset += 15;
   removeChildNodes(itemContainer);
-  fetchItem(offset, limit);
+  if (offset <= 64) {
+    fetchItems(offset, limit);
+  }
 });
+
+async function fetchItem(id) {
+  const res = await fetch(`https://pokeapi.co/api/v2/item/${id}/`);
+  const data = await res.json();
+  createItem(data);
+  spinner.style.display = "none";
+}
+
+async function fetchItems(offset, limit) {
+  spinner.style.display = "block";
+  for (let i = offset; i <= offset + limit; i++) {
+    await fetchItem(i);
+  }
+}
 
 function createItem(item) {
   const flipCard = document.createElement("div");
@@ -46,14 +58,14 @@ function createItem(item) {
 
   const number = document.createElement("p");
   number.textContent = `#${item.id.toString().padStart(2, 0)}`;
-  
+
   const name = document.createElement("p");
   name.classList.add("name");
-  name.textContent = item.name;
-  
+  name.textContent = nombre(item);
+
   const flavor_text_entries = document.createElement("p");
   flavor_text_entries.classList.add("description");
-  flavor_text_entries.textContent = "Descripción: " +descripcion(item);
+  flavor_text_entries.textContent = "Descripción: " + descripcion(item);
 
   const category = document.createElement("p");
   category.classList.add("category");
@@ -80,6 +92,20 @@ function removeChildNodes(parent) {
 }
 
 function descripcion(description) {
-  const desc = description.flavor_text_entries[13];
-  return desc.text;
+  const desc = description.flavor_text_entries;
+  for (let index = 0; index < desc.length; index++) {
+    if (desc[index].language.name == "es") {
+      return desc[index].text;
+    } else if (desc[index].langua) {
+    }
+  }
+}
+
+function nombre(name) {
+  const names = name.names;
+  for (let index = 0; index < names.length; index++) {
+    if (names[index].language.name == "es") {
+      return names[index].name;
+    }
+  }
 }

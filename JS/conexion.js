@@ -14,7 +14,7 @@ con.connect(function (err) {
   //console.log(obtenerIdEntrenador("Daniel"));
   //itemsEntrenador(1,4);
   //insertarPokemon("Mr Mime");
-  pokemonEntrenador(1,3);
+  listarUsuarios("Kanto");
   con.end(function (err) {
     if (err) {
       return console.log("error:" + err.message);
@@ -31,6 +31,42 @@ function obtenerIdEntrenador(name) {
     console.log(result[0].EntrenadorID);
   });
 }
+function registroUsuario(name, password) {
+  con.connect(function (err) {
+    if (err) throw err;
+    console.log("Conectado");
+
+    var sql = "INSERT INTO Usuarios (Nombre,Contraseña) VALUES ?";
+    var values = [[name, password]];
+    con.query(sql, [values]),
+      function (err, result) {
+        if (err) {
+          return console.log("error:" + err, message);
+        }
+        console.log("Datos insertados" + result.affectedRows);
+      };
+
+    con.end(function (err) {
+      if (err) {
+        return console.log("error:" + err.message);
+      }
+      console.log("Conexión cerrada");
+    });
+  });
+}
+
+function listarUsuarios() {
+  var sql = "SELECT * FROM Entrenador";
+  con.query(sql, function (err, result) {
+    if (err) throw err;
+    for (let index = 0; index < result.length; index++) {
+      const element = result[index];
+      console.log(element);  
+    }
+    
+  });
+}
+
 
 function insertarUsuario(name, region) {
   var sql = "INSERT INTO Entrenador (Nombre, Region) VALUES ?";
@@ -49,30 +85,32 @@ function insertarUsuario(name, region) {
 function modificarUsuario(name) {
   var sql = "UPDATE Entrenador SET Nombre =? WHERE Nombre =?";
   var values = [[name]];
-  con.query(sql, [values]), function (err, result) {
-    if (err) {
-      return console.log("error:" + err, message);
-    }
-    console.log("Datos modificados" + result.affectedRows);
-  };
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) {
+        return console.log("error:" + err, message);
+      }
+      console.log("Datos modificados" + result.affectedRows);
+    };
 }
 
 function añadirItems(cantidad, name) {
   var sql = "INSERT INTO Misitems (Cantidad, Nombre) VALUES ?";
   var values = [[cantidad, name.toLowerCase()]];
-  con.query(sql, [values]), function (err, result) {
-    if (err) {
-      var sql = "UPDATE Misitems SET Cantidad=? WHERE Nombre=?";
-      var values = [[cantidad, name]];
-      con.query(sql, [values], function (err, result) {
-        if (err) {
-          return console.log("error:" + err, message);
-        };
-      });
-      //return console.log("error:" + err, message);
-      console.log("Datos insertados" + result.affectedRows);
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) {
+        var sql = "UPDATE Misitems SET Cantidad=? WHERE Nombre=?";
+        var values = [[cantidad, name]];
+        con.query(sql, [values], function (err, result) {
+          if (err) {
+            return console.log("error:" + err, message);
+          }
+        });
+        //return console.log("error:" + err, message);
+        console.log("Datos insertados" + result.affectedRows);
+      }
     };
-  }
 }
 
 function obtenerIdEntrenador(name) {
@@ -114,34 +152,39 @@ function obtenerIdBerries(name) {
 function itemsEntrenador(cod_I, cod_E) {
   var sql = "INSERT INTO EntrenadorMisitems (MisitemsID, EntrenadorID) VALUES?";
   var values = [[cod_I, cod_E]];
-  con.query(sql, [values]), function (err, result) {
-    if (err) throw err;
-    console.log(result.affectedRows);
-  };
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) throw err;
+      console.log(result.affectedRows);
+    };
 }
 //SELECT EntrenadorID, Contraseña, (SELECT EntrenadorID from Usuarios WHERE Nombre=?) as NombreEntrenador from Usuarios;
 //SELECT Nombre, Contraseña, (SELECT EntrenadorID from Usuarios WHERE Nombre="Daniel") as IDEntrenador from Usuarios
 function pokemonEntrenador(cod_P, cod_E) {
-  var sql = "INSERT INTO EntrenadorMispokemon (MispokemonID, EntrenadorID) VALUES?";
+  var sql =
+    "INSERT INTO EntrenadorMispokemon (MispokemonID, EntrenadorID) VALUES?";
   var values = [[cod_P, cod_E]];
-  con.query(sql, [values]), function (err, result) {
-    if (err) throw err;
-    console.log(result.affectedRows);
-  };
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) throw err;
+      console.log(result.affectedRows);
+    };
 }
 
 function berriesEntrenador(cod_B, cod_E) {
-  var sql = "INSERT INTO EntrenadorMisberries (MisberriesID, EntrenadorID) VALUES?";
+  var sql =
+    "INSERT INTO EntrenadorMisberries (MisberriesID, EntrenadorID) VALUES?";
   var values = [[cod_B, cod_E]];
-  con.query(sql, [values]), function (err, result) {
-    if (err) throw err;
-    console.log(result.affectedRows);
-  };
+  con.query(sql, [values]),
+    function (err, result) {
+      if (err) throw err;
+      console.log(result.affectedRows);
+    };
 }
 //Select con ambos indices EntrenadorMisItems result.affectedRows
 function insertarPokemon(name) {
-  var aux  = name.toLowerCase();
-  aux = aux.replaceAll(" ","-");
+  var aux = name.toLowerCase();
+  aux = aux.replaceAll(" ", "-");
   var sql = "INSERT INTO Mispokemon (Nombre) VALUES ?";
   var values = [[aux]];
   con.query(sql, [values]),
@@ -154,7 +197,7 @@ function insertarPokemon(name) {
 }
 
 function insertarBerries(name) {
-  var aux  = name.toLowerCase();  
+  var aux = name.toLowerCase();
   var sql = "INSERT INTO Misberries (Nombre) VALUES ?";
   var values = [[aux]];
   con.query(sql, [values]),

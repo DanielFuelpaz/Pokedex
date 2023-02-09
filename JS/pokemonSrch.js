@@ -5,19 +5,20 @@ const next = document.querySelector("#next");
 const input = document.querySelector("#searchPKM");
 const search = document.querySelector("#searchBtn");
 
-let limit = 8;
+
+let limit = 11;
 let offset = 1;
 
 previous.addEventListener("click", () => {
   if (offset != 1) {
-    offset -= 9;
+    offset -= 12;
     removeChildNodes(pokemonContainer);
     fetchPokemons(offset, limit);
   }
 });
 
 next.addEventListener("click", () => {
-  offset += 9;
+  offset += 12;
   removeChildNodes(pokemonContainer);
   fetchPokemons(offset, limit);
 });
