@@ -29,9 +29,22 @@
             onchange="removeChildNodes(itemContainer),fetchItem(searchItems.value.toLowerCase())" />
         <input type="button" onclick="removeChildNodes(itemContainer),fetchItem(searchItems.value.toLowerCase())"
             value="Search" />
-            <input type="button" onclick="" value="Listar">
+        <input type="button" value="Listar" onclick="removeChildNodes(itemContainer),fetchItems(1,14)" />
     </div>
     <div class="item-container"></div>
+    <nav class="pagination" aria-label="...">
+        <ul class="pagination">
+            <li class="page-item" id="previous">
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+            </li>
+            <li class="page-item" id="next">
+                <a class="page-link" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="spinner" class="spinner-border text-light" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
     <script src="../JS/pokemonItems.js"></script>
     <footer class="items__footer">
         <ul class="submenu">

@@ -1,9 +1,39 @@
 const itemContainer = document.querySelector(".item-container");
+const previous = document.querySelector("#previous");
+const next = document.querySelector("#next");
+const spinner = document.querySelector("#spinner");
+
+let limit = 14;
+let offset = 1;
+
+previous.addEventListener("click", () => {
+  if (offset != 1) {
+    offset -= 15;
+    removeChildNodes(itemContainer);
+    fetchItems(offset, limit);
+  }
+});
+
+next.addEventListener("click", () => {
+  offset += 15;
+  removeChildNodes(itemContainer);
+  if (offset <= 64) {
+    fetchItems(offset, limit);
+  }
+});
 
 async function fetchItem(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/item/${id}/`);
   const data = await res.json();
   createItem(data);
+  spinner.style.display = "none";
+}
+
+async function fetchItems(offset, limit) {
+  spinner.style.display = "block";
+  for (let i = offset; i <= offset + limit; i++) {
+    await fetchItem(i);
+  }
 }
 
 function createItem(item) {
@@ -66,8 +96,7 @@ function descripcion(description) {
   for (let index = 0; index < desc.length; index++) {
     if (desc[index].language.name == "es") {
       return desc[index].text;
-    }else if(desc[index].langua){
-
+    } else if (desc[index].langua) {
     }
   }
 }
@@ -77,6 +106,6 @@ function nombre(name) {
   for (let index = 0; index < names.length; index++) {
     if (names[index].language.name == "es") {
       return names[index].name;
+    }
   }
-}
 }

@@ -29,6 +29,7 @@
         <input type="text" class="search-bar__input" placeholder="Ingrese número/nombre del pokemon" id="searchPKM"
             onchange="removeChildNodes(pokemonContainer),fetchPokemon(searchPKM.value.toLowerCase())">
         <input type="button" class="search-bar__button" value="Search">
+        <input type="button" value="Listar" onclick="removeChildNodes(pokemonContainer),fetchPokemons(1,11)"/>
     </div>
 
     <div class="pokemon-container"></div>
