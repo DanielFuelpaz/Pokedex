@@ -1,11 +1,14 @@
 const berrieContainer = document.querySelector(".berrie-container");
-
+const previous = document.querySelector("#previous");
+const next = document.querySelector("#next");
 async function fetchBerry(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/berry/${id}/`);
   const data = await res.json();
   createBerrie(data);
 }
 
+let limit = 8;
+let offset = 1;
 /*
 Berries
 id
@@ -16,6 +19,19 @@ suavidad
 sabor
 */
 
+previous.addEventListener("click", () => {
+  if (offset != 1) {
+    offset -= 9;
+    removeChildNodes(berrieContainer);
+    fetchBerry(offset, limit);
+  }
+});
+
+next.addEventListener("click", () => {
+  offset += 9;
+  removeChildNodes(berrieContainer);
+  fetchBerry(offset, limit);
+});
 function createBerrie(berrie) {
   const flipCard = document.createElement("div");
   flipCard.classList.add("flip-card");

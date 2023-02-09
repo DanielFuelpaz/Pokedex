@@ -1,10 +1,28 @@
 const itemContainer = document.querySelector(".item-container");
-
+const previous = document.querySelector("#previous");
+const next = document.querySelector("#next");
 async function fetchItem(id) {
   const res = await fetch(`https://pokeapi.co/api/v2/item/${id}/`);
   const data = await res.json();
   createItem(data);
 }
+let limit = 8;
+let offset = 1;
+
+
+previous.addEventListener("click", () => {
+  if (offset != 1) {
+    offset -= 9;
+    removeChildNodes(itemContainer);
+    fetchItem(offset, limit);
+  }
+});
+
+next.addEventListener("click", () => {
+  offset += 9;
+  removeChildNodes(itemContainer);
+  fetchItem(offset, limit);
+});
 
 function createItem(item) {
   const flipCard = document.createElement("div");

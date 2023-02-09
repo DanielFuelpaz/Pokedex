@@ -35,7 +35,7 @@ padding: 0px;
   /* justify-content: center; */
 }
 .bodyItems{
-  grid-template-rows: 10vh 78vh 12vh;
+  grid-template-rows: 17vh 12vh auto 8vh 1vh 10vh;
   grid-template-columns: 10vw 80vw 10vw;
 }
 .bodyID{
@@ -43,7 +43,7 @@ padding: 0px;
 }
 .bodyBerries{
   grid-template-columns: 10vw 80vw 10vw;
-  grid-template-rows: 10vh 12vh auto 8vh;
+  grid-template-rows: 17vh 12vh auto 8vh 1vh 10vh;
 }
 header{
   grid-row:1;
@@ -346,7 +346,7 @@ section{
 }
 footer{
   display:flex;
-  grid-row:3;
+  grid-row: 6;
   grid-column: 1/4;
   background-color: white;
   padding: 5px;

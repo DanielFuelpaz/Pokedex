@@ -29,10 +29,20 @@
             onchange="removeChildNodes(berrieContainer),fetchBerry(searchBerries.value.toLowerCase())" />
         <input type="button" onclick="removeChildNodes(berrieContainer) ,fetchBerry(searchBerries.value)"
             value="Search" />
-        <input type="button" value="Listar" />
     </div>
     <div class="berrie-container"></div>
+    <nav class="pagination" aria-label="...">
+        <ul class="pagination">
+            <li class="page-item" id="previous">
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+            </li>
+            <li class="page-item" id="next">
+                <a class="page-link" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </nav>
     <script src="../JS/pokemonBerries.js"></script>
+    
     <footer class="berries__footer">
         <ul class="submenu">
             <li class="submenus__links"><a href="pokemonSearch.html">

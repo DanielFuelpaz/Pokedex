@@ -116,10 +116,9 @@ img {
 .berries__footer {
   display: flex;
   grid-column: 1/4;
-  grid-row: 4;
+  grid-row: 6;
   background-color: white;
   padding: 5px;
-
 }
 .submenu {
   width: 100%;
